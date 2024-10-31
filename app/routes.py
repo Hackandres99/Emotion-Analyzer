@@ -1,10 +1,10 @@
-# import os
+import os
 import cv2
 import numpy as np
 from flask import Flask, request, jsonify
 
-# deepface_models = os.path.join(os.getcwd(), "app", "models")
-# os.environ["DEEPFACE_HOME"] = deepface_models
+deepface_models = os.path.join(os.getcwd(), "app", "models")
+os.environ["DEEPFACE_HOME"] = deepface_models
 from deepface import DeepFace
 
 app = Flask(__name__)

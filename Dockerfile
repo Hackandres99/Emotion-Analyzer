@@ -19,11 +19,16 @@ RUN python -m venv --copies /opt/venv \
 # Añade el entorno virtual al PATH para que se use por defecto
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Expone el puerto en el que se ejecutará la aplicación (ajústalo según tu aplicación)
+# Copia y prepara el script de inicio
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Expone el puerto en el que se ejecutará la aplicación
 EXPOSE 8000
 
-# Comando para iniciar la aplicación; reemplaza "app:app" según tu configuración
-CMD ["waitress-serve", "--port=8000", "run:app"]
+# Comando para iniciar la aplicación
+CMD ["./start.sh"]
+
 
 
 
