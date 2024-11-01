@@ -42,7 +42,7 @@ establecer en la carpeta config cuales van a ser las urls que tendran acceso a l
 
 ![url access][url access]
 
-Esto se puede hacer tanto en el archivo .dev o .prod, dependiendo de que entorno se va a utilizar se puede cambiar la forma de ejecucion creando un archivo .env que contenga lo siguiente:
+Esto se puede hacer tanto en el archivo .dev o .prod, dependiendo de que entorno se va a utilizar se puede cambiar la forma de ejecucion modificando la variable de entorno CONFIG_ENV
 
 
 [local]: http://localhost:5000/analyze_emotion
