@@ -15,12 +15,17 @@ venv\scripts\activate
 ```sh
 pip install -r requirements.txt
 ```
-7. Ejecutar el servidor waitress:
+7. Agregar variables de entorno a arcivo .env:
+```bash
+CONFIG_ENV=config.dev
+TF_ENABLE_ONEDNN_OPTS=0
+```
+8. Ejecutar el servidor waitress:
 ```sh
 waitress-serve --host=localhost --port=5000 run:app
 ```
 ## Consumo de la api:
-A traves de la url [local] o [production] se pueden enviar las peticiones http
+A traves de la url [local] se pueden enviar las peticiones http
 
 Si solo se envia la imagen a traves de post devolvera el resultado que detectaron los modelos de deepface para el reconocimiento facial:
 
@@ -39,11 +44,8 @@ establecer en la carpeta config cuales van a ser las urls que tendran acceso a l
 
 Esto se puede hacer tanto en el archivo .dev o .prod, dependiendo de que entorno se va a utilizar se puede cambiar la forma de ejecucion creando un archivo .env que contenga lo siguiente:
 
-![env vars][env vars]
 
 [local]: http://localhost:5000/analyze_emotion
-[production]: http://urlDeProduction/analyze_emotion
 [only image]: documentation/only_image.jpg
 [with parameters]: documentation/with_parameters.jpg
 [url access]: documentation/app_access_url.jpg
-[env vars]: documentation/env_vars.jpg
